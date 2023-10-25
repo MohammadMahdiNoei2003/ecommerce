@@ -1,4 +1,5 @@
 import './App.css'
+import { sampleProducts } from './data'
 
 function App() {
 
@@ -8,10 +9,19 @@ function App() {
         ECommerce
       </header>
       <main>
-
+        <ul>
+          {
+            sampleProducts.map(product => (
+            <li key={product.slug}>
+              <h2>{product.name}</h2>
+              <img src={product.image} alt={product.name} className='product-image' />
+              <p>Price: {product.price} $</p>
+            </li>))
+          }
+        </ul>
       </main>
       <footer>
-
+          Information
       </footer>
     </div>
   )
